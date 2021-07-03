@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# The command below will start a second Keycloak instace on a port offset from the other instance.
+# The command below will start a second Keycloak instance on a port offset from the other instance.
 # The second instance will export the indicated realm and attach itself to the terminal.
 # Keycloak will log the message: "Admin console listening on http://127.0.0.1:<port>"
 # You should press Ctrl-C after this message is logged.
