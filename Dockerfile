@@ -1,9 +1,10 @@
-FROM quay.io/keycloak/keycloak:23.0.1
+FROM quay.io/keycloak/keycloak:26.0.6
 
-COPY import_realm.json /opt/keycloak/data/import/import_realm.json
+ARG REALM_FILE=import_realm.json
+COPY ${REALM_FILE} /opt/keycloak/data/import/import_realm.json
 
-ENV KEYCLOAK_ADMIN admin
-ENV KEYCLOAK_ADMIN_PASSWORD Pa55w0rd
+ENV KC_BOOTSTRAP_ADMIN_USERNAME=admin
+ENV KC_BOOTSTRAP_ADMIN_PASSWORD=Pa55w0rd
 
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
 CMD ["start-dev", "--import-realm"]
